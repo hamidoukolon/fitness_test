@@ -28,7 +28,7 @@ module.exports = {
     },
     getWorkoutsInRange: async function(req, res){
       try {
-        const response = await Workout.findByIdAndUpdate()
+        const response = await Workout
         
       } catch (error) {
         res.send(error)
