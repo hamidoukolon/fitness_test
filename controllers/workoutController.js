@@ -21,7 +21,15 @@ module.exports = {
     },
     addExercise: async function(req, res){
       try {
-        const response = await Workout.findByIdAndUpdate()
+        const response = await Workout.findByIdAndUpdate(
+            req.params.id,
+            {
+                $push: {
+                    exercises: req.body
+                }
+            }
+        )
+        res.json(response);
       } catch (error) {
         res.send(error)
       }
